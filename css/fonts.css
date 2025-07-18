@@ -1,0 +1,25 @@
+/* fonts.css: Force Prompt font for all elements */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap');
+
+html,
+body,
+*,
+*:before,
+*:after,
+.navbar *,
+.footer *,
+.table *,
+.form-control,
+.btn,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar,
+.navbar-nav,
+.navbar-brand,
+.footer {
+    font-family: 'Prompt', Arial, sans-serif !important;
+}

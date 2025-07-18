@@ -1,0 +1,132 @@
+body {
+    background: #fff;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-desc {
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    background: #2563eb;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border: none;
+    transition: background 0.2s;
+}
+
+.hero-btn:hover {
+    background: #1d4ed8;
+    color: #fff;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.feature-desc {
+    color: #888;
+    font-size: 1rem;
+}
+
+.navbar-brand img {
+    height: 32px;
+    margin-right: 8px;
+}
+
+.navbar {
+    /* เปลี่ยนสีพื้นหลังของ Navbar  */
+    background: #ff8f00 !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    /* เปลี่ยนสีตัวหนังสือของ Navbar  */
+    color: #fff !important;
+    margin-right: 1.2rem;
+}
+
+.navbar-nav .nav-link.active {
+    /* เปลี่ยนสีตัวหนังสือของ Navbar (หน้าที่เลือก)  */
+    color: #222 !important;
+}
+
+.navbar-nav .nav-link.btn {
+    color: #fff !important;
+    /* เปลี่ยนสีปุ่ม */
+    background: #f9a825;
+    border-radius: 6px;
+    padding: 0.3rem 1.1rem;
+    margin-left: 0.5rem;
+}
+
+.navbar-nav .nav-link.btn:hover {
+    background: #ffe082;
+}
+
+.footer {
+    border-top: 1px solid #eee;
+    margin-top: 3rem;
+    padding: 2rem 0 1rem 0;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.footer .navbar-nav .nav-link {
+    color: #888 !important;
+    font-size: 1rem;
+    margin-right: 1.2rem;
+}
+
+.footer .navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav {
+        font-size: 1.35rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .navbar-brand img {
+        height: 48px !important;
+        width: auto;
+        margin-right: 16px !important;
+    }
+
+    .navbar-brand {
+        font-size: 2.1rem !important;
+        /* เปลี่ยนสีตัวหนังสือข้างโลโก้ตรงนี้ เช่น #fff คือสีขาว */
+        color: #fff !important;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.25rem !important;
+        padding-left: 1.2rem !important;
+        padding-right: 1.2rem !important;
+    }
+}

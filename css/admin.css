@@ -1,0 +1,35 @@
+/* admin.css: Custom styles for all admin pages */
+body { background: linear-gradient(120deg, #f8fafc 60%, #e0e7ef 100%); min-height: 100vh; }
+.sidebar { min-height: 100vh; background: linear-gradient(180deg,#2563eb 60%,#1e40af 100%); color: #fff; box-shadow: 2px 0 8px #e0e7ef33; }
+.sidebar .nav-link { color: #fff; border-radius: 0.7rem; margin-bottom: 0.25rem; transition: background 0.2s, transform 0.2s; font-size: 1.08rem; padding: 0.7rem 1.1rem; }
+.sidebar .nav-link.active, .sidebar .nav-link:hover { background: linear-gradient(90deg,#1e40af 60%,#2563eb 100%); color: #fff; box-shadow: 0 2px 12px #1e40af33; transform: translateY(-2px) scale(1.04); }
+.topbar { background: #fff; border-bottom: 1px solid #e5e7eb; border-radius: 0 0 1.2rem 1.2rem; box-shadow: 0 2px 8px #e0e7ef33; }
+.main-content { padding: 2.5rem 2rem 2rem 2rem; }
+.sidebar .bi { margin-right: 8px; }
+.bg-gradient { background: linear-gradient(90deg,#f1f5f9 0,#e0e7ef 100%) !important; }
+.card { border-radius: 1.2rem !important; border: none !important; box-shadow: 0 4px 32px #2563eb13 !important; transition: box-shadow 0.2s; }
+.card:hover { box-shadow: 0 8px 40px #2563eb22 !important; }
+.card .card-title { font-weight: 700; letter-spacing: 0.2px; font-size: 1.13rem; }
+.card .card-body { padding: 1.7rem 1.3rem; }
+.form-select, .form-control { border-radius: 0.9rem !important; font-size: 1.07rem; }
+.form-select:focus, .form-control:focus { box-shadow: 0 0 0 2px #2563eb33; border-color: #2563eb; }
+.table { background: #fff; border-radius: 0.9rem; overflow: hidden; }
+.table thead th { background: linear-gradient(90deg,#f1f5f9 0,#e0e7ef 100%) !important; color: #222; font-weight: 700; border-top: none; font-size: 1.07rem; }
+.table-bordered > :not(caption) > * > * { border-width: 1.5px; }
+.badge { font-size: 1.02rem; padding: 0.5em 1.1em; border-radius: 0.8em; box-shadow: 0 2px 8px #2563eb11; }
+.shadow { box-shadow: 0 4px 24px #2563eb11 !important; }
+.shadow-sm { box-shadow: 0 2px 8px #2563eb11 !important; }
+.main-content h3 { font-weight: 800; letter-spacing: 0.5px; font-size: 1.45rem; }
+.main-content .bg-gradient { border-radius: 1.2rem; box-shadow: 0 2px 16px #2563eb11; }
+.main-content .form-select, .main-content .form-label { font-size: 1.08rem; }
+.main-content .form-label { font-weight: 600; color: #222; }
+.main-content .form-select { min-width: 110px; }
+.main-content .card-title i { vertical-align: middle; }
+.main-content .card-title span { vertical-align: middle; }
+.main-content .card { background: linear-gradient(120deg,#fff 80%,#f1f5f9 100%); }
+.main-content .card .card-body { border-radius: 1.1rem; }
+.main-content .table-responsive { border-radius: 0.9rem; box-shadow: 0 2px 12px #2563eb11; }
+.main-content .badge { font-weight: 600; }
+.main-content .form-select, .main-content .form-control { background: #f8fafc; }
+.main-content .form-select:focus, .main-content .form-control:focus { background: #fff; }
+@media (max-width: 767px) { .main-content { padding: 1rem 0.2rem; } .card .card-body { padding: 1rem 0.5rem; } .main-content h3 { font-size: 1.1rem; } }

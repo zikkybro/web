@@ -1,0 +1,603 @@
+footer.footer,
+.footer * {
+  color: #fff !important;
+  /* text-shadow: 0 1px 4px #fff; */
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+footer.footer {
+  position: relative;
+  z-index: 20;
+  background: transparent;
+}
+
+/* ===== เบลอภาพพื้นหลัง nu.png ทั้งหน้าเว็บ ยกเว้นใน Modal ===== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: url('../img/nu.png') center center/cover no-repeat;
+  filter: blur(7px) brightness(0.92);
+  opacity: 1;
+  pointer-events: none;
+}
+
+body {
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+/* ให้ modal-content ทึบ ไม่รับผลเบลอ */
+.modal-content {
+  background: #fff !important;
+  position: relative;
+  z-index: 10;
+}
+
+.calendar-table td.available {
+  background: #e6fbe6;
+  color: #15803d;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calendar-table td.available:hover {
+  background: #c6f6d5;
+}
+
+.calendar-table td:empty {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Controls & legend */
+/* ... other styles ... */
+
+/* The rest of the file continues here */
+
+/* The following styles are being removed */
+
+/* Removed styles */
+.calendar-table td.available {
+  background: #e6fbe6;
+  color: #15803d;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calendar-table td.available:hover {
+  background: #c6f6d5;
+}
+
+.calendar-table td:empty {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ===== Modal Booking Calendar: Hover effect for time buttons ===== */
+#bookingModal .btn-time-select {
+  background: #fff;
+  color: #198754;
+  border: 2px solid #198754;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  box-shadow: 0 2px 8px rgba(25, 135, 84, 0.07);
+}
+
+#bookingModal .btn-time-select:hover:not(:disabled),
+#bookingModal .btn-time-select.active {
+  /* เปลี่ยนสีกรอบ (border-color) และสีเวลา (background, color) ตอน hover หรือ active ของปุ่มเวลาใน modal booking calendar ตรงนี้ */
+  background: #198754;
+  color: #fff;
+  border-color: #145c32;
+  box-shadow: 0 0 0 2px #19875433;
+}
+
+#bookingModal .btn-time-select:disabled {
+  background: #f5f5f5;
+  color: #adb5bd;
+  border-color: #adb5bd;
+}
+
+.calendar-table td {
+  opacity: 1;
+}
+
+/* Input focus/hover effect */
+#bookingModal input.form-control:focus,
+#bookingModal textarea.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px #0d6efd33;
+}
+
+#bookingModal input.form-control:hover,
+#bookingModal textarea.form-control:hover {
+  border-color: #198754;
+}
+
+#bookingModal .form-label {
+  font-weight: 500;
+}
+
+#bookingModal .invalid-feedback {
+  color: #dc3545;
+}
+
+/* เอฟเฟค hover วันที่ว่างในปฏิทิน */
+td.calendar-date-selectable:hover {
+  /* เปลี่ยนสีพื้นหลัง (background), สีกรอบ (box-shadow) ของ cell วันที่ในปฏิทินตอน hover (เม้าชี้ค้าง) ตรงนี้ */
+  background: #ffe082 !important;
+  box-shadow: 0 0 0 2px #ff8f00;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+/* ให้ cell วันที่ที่คลิกได้มีเอฟเฟกต์ hover และแสดงปุ่มจองใน cell */
+.calendar-date-hover {
+  box-shadow: 0 0 0 2px #19875433;
+  transition: box-shadow 0.2s;
+}
+
+.calendar-date-hover:hover {
+  /* เปลี่ยนสีพื้นหลัง (background) และสีกรอบ (box-shadow) ของ cell วันที่ที่คลิกได้ในปฏิทินตอน hover ตรงนี้ */
+  background: #e9f7ef !important;
+  box-shadow: 0 0 0 3px #19875499;
+}
+
+.calendar-date-selectable {
+  width: 100%;
+  height: 38px;
+  border: 2px dashed #198754;
+  border-radius: 8px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  background: #fff;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.calendar-date-hover:hover .calendar-date-selectable {
+  background: #e9f7ef;
+  border-color: #157347;
+}
+
+/* ปรับสไตล์ปฏิทินให้คล้ายตัวอย่าง ใช้สีหลัก Bootstrap 5 */
+.calendar-table {
+  background: transparent;
+  border-radius: 24px;
+  box-shadow: none;
+  overflow: visible;
+  margin: 0 auto;
+  width: auto;
+  max-width: none;
+  border-spacing: 18px 18px;
+  /* เพิ่มช่องว่างระหว่าง cell จริง ๆ */
+  border-collapse: separate !important;
+}
+
+.calendar-table th,
+.calendar-table td {
+  text-align: center;
+  vertical-align: middle;
+  height: 64px;
+  width: 64px;
+  font-size: 1.18rem;
+  border: none;
+  background: #f3f6fa;
+  color: #333;
+  border-radius: 12px;
+  transition: background 0.2s;
+  box-shadow: none;
+  padding: 0.7rem 0.3rem;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.calendar-table th {
+  background: transparent;
+  color: #6c757d;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 0;
+}
+
+.calendar-table td.today {
+  background: #e9eff7 !important;
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+.calendar-table td.booked {
+  background: #ffd6b3 !important;
+  color: #fd7e14;
+  font-weight: bold;
+}
+
+.calendar-table td.closed-booking {
+  /* เปลี่ยนสีพื้นหลังและสีตัวหนังสือของ cell วันที่ที่ปิดจอง (closed-booking) ตรงนี้ */
+  background: #f5f5f5 !important;
+  color: #adb5bd;
+  font-weight: bold;
+}
+
+.calendar-table td.out-of-range {
+  /* เปลี่ยนสีพื้นหลังและสีตัวหนังสือของ cell วันที่นอกช่วงที่จองได้ (out-of-range) ตรงนี้ */
+  background: #f5f5f5 !important;
+  color: #adb5bd;
+}
+
+.calendar-table td .btn-book {
+  /* ปรับสีปุ่มจอง (btn-book) ใน cell ปฏิทิน เช่น สีพื้นหลัง สีขอบ สีตัวหนังสือ ตรงนี้ */
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  padding: 0.3rem 0;
+  background: #fff;
+  color: #0d6efd;
+  border: 2px solid #0d6efd;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.07);
+}
+
+.calendar-table td .btn-book:hover {
+  /* เปลี่ยนสีปุ่มจอง (btn-book) ตอน hover ใน cell ปฏิทิน ตรงนี้ */
+  background: #0d6efd;
+  color: #fff;
+}
+
+.calendar-table td .fw-bold.fs-5 {
+  font-size: 1.18rem !important;
+  margin-bottom: 0.2rem;
+}
+
+.calendar-table td {
+  padding: 0.2rem 0.1rem;
+}
+
+.calendar-table td .text-secondary,
+.calendar-table td .text-danger {
+  font-size: 0.95rem;
+}
+
+.calendar-table td .text-danger {
+  color: #dc3545 !important;
+}
+
+.calendar-table td .text-secondary {
+  color: #adb5bd !important;
+}
+
+.calendar-table td .fw-bold {
+  font-weight: 600 !important;
+}
+
+.calendar-table td:empty {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Controls & legend */
+.calendar-controls,
+.calendar-legend {
+  justify-content: center;
+}
+
+.calendar-controls select,
+.calendar-controls .btn {
+  border-radius: 8px;
+  font-size: 1.08rem;
+}
+
+.calendar-legend span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  margin-right: 0.3em;
+  vertical-align: middle;
+}
+
+.legend-available {
+  background: #d1f5e2;
+  border: 2px solid #b6e4c7;
+}
+
+.legend-booked {
+  background: #ffe5e0;
+  border: 2px solid #ffb3b3;
+}
+
+.legend-today {
+  background: #fff;
+  border: 2px solid #0d6efd;
+}
+
+@media (max-width: 1200px) {
+
+  .calendar-table th,
+  .calendar-table td {
+    height: 44px;
+    width: 44px;
+    font-size: 0.98rem;
+  }
+
+  .calendar-table {
+    max-width: 100%;
+  }
+}
+
+body {
+  background: #fff;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: none !important;
+  text-align: center;
+  vertical-align: middle;
+  height: 64px;
+  width: 64px;
+  font-size: 1.18rem;
+  background: #f3f6fa;
+  color: #333;
+  border-radius: 12px;
+  transition: background 0.2s;
+  box-shadow: none;
+  padding: 0.7rem 0.3rem;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.calendar-table th {
+  background: transparent;
+  color: #6c757d;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 0;
+}
+
+.calendar-table th:first-child {
+  border-top-left-radius: 0;
+}
+
+.calendar-table th:last-child {
+  border-top-right-radius: 0;
+}
+
+/*เปลื่ยนสีกรอบวันนี้ของปฎิทิน*/
+.calendar-table td.today {
+  background: #fff !important;
+  border: 2.5px solid #ff8f00 !important;
+  box-shadow: 0 0 0 2px #ffca28;
+  color: #ff8f00;
+  font-weight: bold;
+  transition: background 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+
+.calendar-table td.today:hover {
+  background: #e3f2fd !important;
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 4px #0d6efd55;
+  color: #0d6efd;
+}
+
+.calendar-table td.booked {
+  background: #ffd6b3 !important;
+  color: #fd7e14;
+  font-weight: bold;
+}
+
+.calendar-table td.available {
+  background: #e6fbe6;
+  color: #15803d;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calendar-table td.available:hover {
+  background: #c6f6d5;
+}
+
+.calendar-legend span {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.calendar-legend .legend-available {
+  background: #d1f5e2;
+  border: 2px solid #b6e4c7;
+}
+
+.calendar-legend .legend-booked {
+  background: #ffe5e0;
+  border: 2px solid #ffb3b3;
+}
+
+.calendar-legend .legend-today {
+  background: #fff;
+  border: 2px solid #0d6efd;
+}
+
+.calendar-controls {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-controls .form-select {
+  min-width: 120px;
+  max-width: 180px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.calendar-controls select {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.calendar-table .btn-book {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.7rem;
+  margin-top: 0.5rem;
+}
+
+#bookingTimeGrid {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#bookingTimeGrid .btn {
+  min-width: 80px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+#bookingTimeGrid .btn-success {
+  background: #e6fbe6;
+  color: #198754;
+  border: 1.5px solid #198754;
+}
+
+#bookingTimeGrid .btn-success.active,
+#bookingTimeGrid .btn-success:focus {
+  background: #198754;
+  color: #fff;
+  border: 1.5px solid #198754;
+  box-shadow: 0 2px 8px rgba(25, 135, 84, 0.12);
+  transform: scale(1.07);
+}
+
+#bookingTimeGrid .btn-danger {
+  background: #ffe0e0;
+  color: #b91c1c;
+  border: 1.5px solid #b91c1c;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+#bookingTimeGrid .btn-danger:disabled {
+  background: #ffe0e0;
+  color: #b91c1c;
+  border: 1.5px solid #b91c1c;
+  opacity: 0.7;
+}
+
+#bookingTimeGrid .btn {
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 767px) {
+
+  .calendar-table th,
+  .calendar-table td {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.2rem;
+    min-width: 45px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .calendar-table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    border-spacing: 6px 8px;
+    table-layout: fixed !important;
+    margin: 0 auto;
+    background: transparent;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    width: 14.28% !important;
+    min-width: 38px;
+    min-height: 38px;
+    max-width: 48px;
+    max-height: 48px;
+    font-size: 0.92rem;
+    padding: 0.18rem 0.08rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    vertical-align: middle;
+    background: #f3f6fa;
+  }
+
+  .calendar-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0 !important;
+    background: transparent;
+  }
+
+  .calendar-table td .fw-bold.fs-5 {
+    font-size: 0.75rem !important;
+  }
+
+  .calendar-legend span {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 0.2em;
+  }
+
+  .calendar-controls .form-select {
+    min-width: 90px;
+    max-width: 140px;
+    font-size: 1.05rem;
+    padding: 0.35rem 1.1rem;
+    border-radius: 8px;
+  }
+
+  .card-body,
+  .card {
+    padding: 0.1rem !important;
+  }
+
+  #bookingTimeGrid .btn {
+    min-width: 60px;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.2rem;
+  }
+}
+
+/*เปลื่ยนสีhoverของปฎิทินวันนี้*/
+.calendar-table td.today:hover {
+  background: #ffe082 !important;
+  border-color: #ffa726 !important;
+  box-shadow: 0 0 0 4px #ff8f00;
+  color: #222;
+}

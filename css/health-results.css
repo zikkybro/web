@@ -1,0 +1,139 @@
+/* CSS เฉพาะสำหรับหน้า health-results.php */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap');
+
+body,
+.history-section-card,
+.table,
+.form-control,
+.btn {
+    font-family: 'Prompt', 'Sarabun', 'Kanit', Arial, sans-serif;
+}
+
+.main-content {
+    background: linear-gradient(120deg, #e0f7fa 0%, #f8fafc 100%);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px #393f8133;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+}
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(2.5px);
+}
+
+.history-section-card {
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px #393f8133;
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+    border: 1.5px solid #e6e6f0;
+    transition: box-shadow 0.2s, border 0.2s, transform 0.18s;
+    animation-duration: 0.7s;
+}
+
+.history-section-card:hover {
+    box-shadow: 0 8px 32px #393f8144;
+    border-color: #b3d7ff;
+    transform: translateY(-2px) scale(1.012);
+}
+
+.health-result-table th,
+.health-result-table td {
+    vertical-align: middle;
+    font-size: 1.04rem;
+    min-width: 120px;
+    height: 52px;
+    box-sizing: border-box;
+}
+
+.health-result-table tbody tr.result-row:hover {
+    background: #eaf6ff !important;
+    transition: background 0.18s;
+}
+
+.health-result-table .badge {
+    font-size: 1em;
+}
+
+.text-result {
+    color: #0d6efd;
+    letter-spacing: 0.5px;
+}
+
+.search-input {
+    border-radius: 1.5rem;
+    font-size: 1.08rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    border: 1.5px solid #b3d7ff;
+    background: #fafdff;
+    transition: border 0.18s, box-shadow 0.18s;
+}
+
+.search-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.15rem #b3d7ff55;
+}
+
+.btn-gradient {
+    background: linear-gradient(90deg, #4f8cff 0%, #38cfff 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px #4f8cff22;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 2rem;
+    transition: background 0.18s, box-shadow 0.18s;
+}
+
+.btn-gradient:hover,
+.btn-gradient:focus {
+    background: linear-gradient(90deg, #38cfff 0%, #4f8cff 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px #38cfff33;
+}
+
+#showAllBtn.btn-warning {
+    background: #ffe082 !important;
+    color: #333 !important;
+}
+
+@media (max-width: 600px) {
+    .search-input {
+        font-size: 1rem;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+
+    .btn-gradient {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .history-section-card {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-bar {
+        font-size: 1rem;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+
+    .main-content {
+        padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+        border-radius: 1.1rem;
+    }
+
+    .history-section-card {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+        border-radius: 1rem;
+    }
+
+    .health-result-table th,
+    .health-result-table td {
+        font-size: 0.98rem;
+    }
+}

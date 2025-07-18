@@ -1,0 +1,41 @@
+body { background: #f8fafc; }
+.card { box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 1rem; }
+.form-control {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    padding: 1.1rem 1rem 0.5rem 1rem;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+.form-control:focus {
+    border-color: #2962ff;
+    box-shadow: 0 0 0 1px #2962ff;
+    background: #fff;
+}
+.form-label {
+    color: #888;
+    font-size: 1rem;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 1.1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s;
+    background: transparent;
+}
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown):not([value=""]) + .form-label {
+    top: -0.7rem;
+    left: 0.9rem;
+    font-size: 0.95rem;
+    color: #2962ff;
+    background: #fff;
+    padding: 0 0.25rem;
+    transform: none;
+}
+.form-outline {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
